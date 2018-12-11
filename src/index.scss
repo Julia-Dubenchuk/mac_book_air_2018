@@ -1,0 +1,770 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+/* ================================================ */
+
+/* ========================================================================== 
+    
+  typography 
+  ========================================================================== */
+  $fontUbuntu: "Ubuntu", "Arial", sans-serif;
+  @mixin font-item($style: normal, $size: 20px, $height: normal, $weight: 400, $family: $fontUbuntu, $align: left) {
+   font-style: $style;
+   font-size: $size;
+   line-height: $height;
+   font-weight: $weight;
+   font-family: $family;
+   text-align: $align;
+  }
+.content-box.wrapper-air {
+
+  h1.title-h1 {
+    @include font-item($size: 60px, $height: 69px, $weight: 700, $align: center);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 40px, $height: 49px, $weight: 700, $align: center);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 35px, $height: 40px, $weight: 700, $align: center);
+    }
+    @media screen and (max-width: 414px){
+      @include font-item($size: 20px, $height: 23px, $weight: 700, $align: left);
+    }
+  }
+
+  h2.title-h2 {
+    @include font-item($size: 50px, $weight: 700);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 30px, $weight: 700);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 25px, $weight: 700);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 20px, $weight: 700);
+    }
+  }
+
+  h3.title-h3 {
+    @include font-item($size: 22px, $height: 25px, $weight: 500);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 16px, $height: 18px, $weight: 500);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 15px, $height: 17px, $weight: 500);
+    }
+  }
+
+  h4.title-h4 {
+    @include font-item($height: 28px, $weight: 500);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 16px, $height: 18px, $weight: 500);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 15px, $height: 21px, $weight: 500);
+    }
+  }
+
+  p {
+    @include font-item($height: 28px);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 16px, $height: 22px);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 14px, $height: 19px);
+    }
+  }
+
+  span.detail-text {
+    @include font-item($size: 18px, $height: 21px);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 15px, $height: 17px);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 14px, $height: 16px);
+    }
+  }
+
+  span.detail-number {
+    @include font-item($size: 60px, $height: 69px);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 40px, $height: 46px);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 25px, $height: 29px);
+    }
+  }
+
+  span.detail-small {
+    @include font-item($size: 30px, $height: 34px);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 20px, $height: 23px);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 15px, $height: 17px);
+    }
+  }
+
+  span.detail-percent {
+    vertical-align: super;
+  }
+
+  span.shema-title {
+    @include font-item($size: 16px, $height: 18px, $align: center);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 14px, $height: 17px, $align: center);
+    }
+    @media screen and (max-width: 1023px){
+      @include font-item($size: 13px, $height: 15px, $align: center);
+    }
+  }
+
+  span.shema-text {
+    @include font-item($size: 15px, $height: 17px, $align: center);
+    @media screen and (max-width: 1365px){
+      @include font-item($size: 14px, $height: 16px, $align: center);
+    }
+    @media screen and (max-width: 1023px){ 
+      @include font-item($size: 13px, $height: 15px, $align: center);
+    }
+  }
+
+}
+
+/* ========================================================================== 
+    
+  colors 
+  ========================================================================== */
+.content-box.wrapper-air {
+  
+  .text-black {
+    color: #000000;
+  }
+
+  .text-grey {
+    color: #4F4F4F;
+  }
+
+  .title-grey {
+    color: #BDBDBD;
+  }
+
+  .title-dark {
+    color: #333333;
+  }
+
+  // .page-section.section-productivity {
+  //   background: #FAFAFA;
+  // }
+
+  .page-section.section-productivity {
+    height: 1896px;
+    background: #FAFAFA url("./images/light_weight_bottom.png") no-repeat;
+    background-position: 130px 80px;
+    @media screen and (max-width: 1365px) {
+      height: 1408px;
+      background-position: 47px 60px;
+    }
+    @media screen and (max-width: 1023px) {
+      height: 1182px;
+    }
+  }
+}
+
+/* ==================================================== */
+
+/* indents
+   ========================================================================== */
+.content-box.wrapper-air {
+  max-width: 1366px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .indent-big {
+    margin-bottom: 80px;
+    @media screen and (max-width: 1365px) {
+      margin-bottom: 60px;
+    }
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .indent-medium {
+    margin-bottom: 40px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .indent-small {
+    margin-bottom: 32px;
+    @media screen and (max-width: 1365px) {
+      margin-bottom: 24px;
+    }
+    @media screen and (max-width: 1023px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .indent-mini {
+    margin-bottom: 10px;
+  }
+
+  .indent-inside-big {
+    padding-top: 80px;
+    @media screen and (max-width: 1365px) {
+      padding-top: 60px;
+    }
+    @media screen and (max-width: 1023px) {
+      padding-top: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      padding-top: 32px;
+    }
+  }
+
+  .indent-title {
+    margin-bottom: 20px;
+  }
+
+  .indent-left {
+    padding-left: 134px;
+    @media screen and (max-width: 1365px) {
+      padding-left: 52px; 
+    }
+    @media screen and (max-width: 1023px) {
+      padding-left: 64px;
+    }
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+
+  .indent-wrapper {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* mixins
+   ========================================================================== */
+
+.content-box.wrapper-air {
+  .align-center-p {
+    text-align: center;
+    margin: 0 auto;
+    @media screen and (max-width: 414px) {
+      text-align: left;
+    }
+  }
+
+  .image-align-center {
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1365px) {
+    .image-vw-big {
+      width: 90vw;
+    }
+
+    .image-vw-medium {
+      width: 80vw;
+    }
+
+    .image-vw-small {
+      width: 74vw;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .image-vw-medium {
+      width: 83vw;
+    }
+
+    .image-vw-small {
+      width: 80vw;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .section-left {
+      .left-text {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    .image-vw-medium {
+      width: 92vw;
+    }
+
+    .image-vw-small {
+      width: 90vw;
+    }
+  }
+
+  .text-width {
+    max-width: 70%;
+    @media screen and (max-width: 1365px) {
+      max-width: 84%;
+    }
+    @media screen and (max-width: 414px) {
+      max-width: 100%;
+    }
+  }
+
+  .text-height {
+    height: 90px;
+    @media screen and (max-width: 1365px) {
+      height: 70px;
+    }
+    @media screen and (max-width: 1023px) {
+      height: 60px;
+    }
+  }
+
+  .image-height {
+    height: 82px;
+  }
+
+  .title-width {
+    max-width: 60%;
+  }
+
+  .image-width-icon {
+    width: 90px;
+    @media screen and (max-width: 1365px) {
+      width: 70px;
+    }
+    @media screen and (max-width: 1023px) {
+      width: 60px;
+    }
+  }
+}
+ 
+/* ========================================================================== 
+
+   page-section
+   ========================================================================== */
+
+.page-section {
+  position: relative;
+
+  img {
+    display: block;
+    height: auto;
+  }
+}
+
+/* wrapper-detail
+   ========================================================================== */
+
+.page-section {
+
+  .wrapper-detail {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+
+    .left-text,
+    .right-detail {
+      flex-basis: 50%;
+      @media screen and (max-width: 767px) {
+        flex-basis: 100%;
+      }
+    }
+    
+    .right-detail {
+      padding-left: 120px;
+      @media screen and (max-width: 1365px) {
+        padding-left: 109px;
+      }
+      @media screen and (max-width: 1023px) {
+        padding-left: 59px;
+      }
+      @media screen and (max-width: 767px) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/* right-detail
+   ========================================================================== */
+
+.page-section {
+
+  .right-detail {
+    display: flex;
+    flex-wrap: wrap;
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      box-sizing: border-box;
+      padding-right: 80px;
+      &:last-child {
+        padding-right: 60px;
+      }
+      @media screen and (max-width: 1365px) {
+        padding-right: 70px;
+        &:last-child {
+          padding-right: 50px;
+        }
+      }
+      @media screen and (max-width: 1023px) {
+        padding-right: 45px;
+        &:last-child {
+          padding-right: 30px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        padding-right: 34px;
+      }
+    }
+  }
+
+  .detail-two-column {
+    .detail-item {
+      &:nth-child(3n),
+      &:nth-child(4) {
+        margin-top: 50px;
+        @media screen and (max-width: 1365px) {
+          margin-top: 40px;
+        }
+        @media screen and (max-width: 1023px) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+/* section-touch
+   ========================================================================== */
+
+   .page-section.section-touch {
+
+    .image-touch {
+      position: relative;
+      left: 0;
+      bottom: 146px;
+      @media screen and (max-width: 1365px) {
+        bottom: 130px;
+      }
+      @media screen and (max-width: 1023px) {
+        bottom: 92px;
+      }
+    }
+
+    .wrapper-detail {
+      position: relative;
+      left: 0;
+      bottom: 66px;
+      margin-bottom: 14px;
+      @media screen and (max-width: 1365px) {
+        bottom: 70px;
+        margin-bottom: -10px;
+      }
+      @media screen and (max-width: 1023px) {
+        bottom: 52px;
+        margin-bottom: -12px;
+      }
+      @media screen and (max-width: 767px) {
+        .left-text {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+   }
+
+   /* section-line
+   ========================================================================== */
+
+.page-section.section-line {
+  &::after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 1px;
+    margin: 0 auto;
+    background: #707070;
+    @media screen and (max-width: 1365px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 767px) {
+      width: 90%;
+    }
+  }
+}
+
+/* section-keyboard
+   ========================================================================== */
+
+.page-section.section-keyboard {
+  &::after {
+    margin-top: 80px;
+  }
+  .detail-item {
+    .image-part-keyboard {
+      width: 207px;
+      margin: 0 auto;
+      @media screen and (max-width: 1365px) {
+        width: 153px;
+      }
+      @media screen and (max-width: 1023px) {
+        width: 139px;
+      }
+      @media screen and (max-width: 767px) {
+        margin: 0;
+      }
+    }
+  }
+  span.detail-text {
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      text-align: left;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .left-text {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* section-productivity
+   ========================================================================== */
+
+.page-section.section-productivity {
+
+  .image-product {
+    display: none;
+  }
+  h4.title-h4 {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 90px;
+      height: 36px;
+      margin-right: 20px;
+      vertical-align: middle;
+      background: url("./images/performance_battery.svg");
+      background-size: cover;
+      @media screen and (max-width: 1365px) {
+        width: 70px;
+        height: 28px;
+      }
+      @media screen and (max-width: 1023px) {
+        width: 60px;
+        height: 24px;
+      }
+    }
+  }
+
+  .text-pad-left {
+    padding-left: 110px;
+    @media screen and (max-width: 1365px) {
+      padding-left: 90px;
+    }
+    @media screen and (max-width: 1023px) {
+      padding-left: 80px;
+    }
+  }
+
+  .right-describe {
+    position: absolute;
+    top: 80px; 
+    right: 108px;
+    max-width: 46%;
+
+    @media screen and (max-width: 1365px) {
+      top: 60px;
+      right: 80px;
+    }
+    @media screen and (max-width: 1023px) {
+      right: 16px;
+      max-width: 55%;
+    }
+
+    .detail-three-column {
+      .detail-item:nth-child(3n + 1) {
+        margin-bottom: 50px;
+        @media screen and (max-width: 1023px) {
+          margin-bottom: 30px;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 86%;
+        height: 1px;
+        margin: 40px 0;
+        background-color: #707070;
+        @media screen and (max-width: 1365px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .right-detail {
+    padding-left: 0;
+    .detail-item {
+      flex-basis: 33%;
+      padding-right: 28px;
+    }
+  }
+
+  .detail-text {
+    display: flex;
+    align-items: flex-end;
+    min-height: 42px;
+  }
+}
+
+/* section-thunderbolt
+   ========================================================================== */
+
+.page-section.section-thunderbolt {
+  
+  .thunderbolt-image {
+    margin: 124px 0 100px;
+    img {
+      margin: 0 auto;
+    }
+  }
+}
+
+/* right-shema
+   ========================================================================== */
+
+.right-shema {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin-left: 132px;
+  padding-right: 130px;
+  box-sizing: border-box;
+
+  .shema-top,
+  .shema-title,
+  .shema-line,
+  .shema-item .item-image {
+    margin-bottom: 15px;
+  }
+
+  .shema-top {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .shema-items {
+    display: flex;
+    justify-content: center;
+
+    .shema-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-basis: 25%;
+    }
+
+    .item-image {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}
+
+/* section-security
+   ========================================================================== */
+
+   .page-section.section-security {
+     @media screen and (max-width: 767px) {
+       display: flex;
+       flex-direction: column;
+       .order-item {
+         order: 2;
+       }
+       .right-detail {
+         margin-bottom: 20px;
+         padding-left: 0;
+       }
+     }
+   }
+
+/* section-force
+   ========================================================================== */
+
+.page-section.section-force {
+
+  .image-force {
+    width: 136px;
+    @media screen and (max-width: 1365px) {
+      width: 100px;
+  }
+    @media screen and (max-width: 1023px) {
+      width: 90px;
+  }
+}
+
+  @media screen and (max-width: 767px) {
+    .left-text {
+      margin-bottom: 20px;
+    }
+  }
+}
